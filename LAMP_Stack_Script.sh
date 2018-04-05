@@ -1,6 +1,9 @@
 #!/bin/bash
+sudo su
 yum update -y
-yum groupinstall -y "Web Server" "MySQL Database" "PHP Support"
+yum groupinstall -y "Web Server" 
+yum groupinstall -y "MySQL Database" 
+yum groupinstall -y "PHP Support" --skip-broken
 service httpd start
 chkconfig httpd on
 groupadd www
